@@ -1,0 +1,61 @@
+#include <stdio.h>
+int main()
+{   /* Criation du fichier */
+
+    struct Tenreg
+    {
+        char ligne[256];  // variable enregistrement
+    } e;
+    FILE *f;
+    int k=1;
+    char nom_fichier[200];
+    printf("\nConstruction du fichier\n");
+    printf("-----------------------\n");
+    // instruction a l'utilisateur
+    printf("Donnez nom_fichier : ");
+    //scanner le nom du fichier meme si il ya des espaces
+    gets(nom_fichier);
+    printf("\n");
+    // creation du nouveau fichier
+    f = fopen( nom_fichier, "w" );
+    // insertion des enregistrements lus à la console
+    printf("(0 pour terminer) ligne%3d: ",k++);
+    // scanner la ligne donneé par utilisateur
+    gets(e.ligne);
+    while ( e.ligne[0] != '0' )
+    {
+        // chaque ligne est un variable existe dans l'enregistrement
+        fprintf(f, "%s\n", e.ligne );
+        printf("(0 pour terminer) ligne%3d: ",k++);
+        // scanner la ligne donneé par utilisateur (boucle)
+        gets(e.ligne);
+    }
+    fflush(f);
+    fclose( f );
+/* ******************************************************************** */
+    /* Affichage du fichier */
+    //char nom_fichier[200];
+    int n, i;
+    printf("\nAffichage du FICHIER\n");
+    printf("--------------------\n");
+    printf("Donnez le nom_fichier: ");
+    gets(nom_fichier);
+    f = fopen( nom_fichier, "r" );
+    i = 1;
+    if ( f != NULL){
+        fgets(e.ligne ,255,f); // lecture des enregistrements depuis le fichier
+    printf("\n\nligne%3d:  %s", i++, e.ligne);
+    while ( ! feof(f) )
+    {
+        fgets(e.ligne ,255,f);
+        if (feof(f)){break;};
+        printf("ligne%3d:  %s", i++, e.ligne);
+    }
+    fclose( f );
+    }
+    else {
+            printf("\n***********************\n");
+            printf("LE FICHIER N'EXISTE PAS\n");
+            printf("***********************\n");
+             }
+    return 0;}
