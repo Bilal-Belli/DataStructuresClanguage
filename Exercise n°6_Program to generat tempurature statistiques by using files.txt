@@ -25,7 +25,7 @@ void Etat_de_Temperature(char nom_fichier[30])
     ptr_de_mon_fichier = fopen( nom_fichier, "rb" );
     if ( fread(&e, sizeof(e), 1, ptr_de_mon_fichier) )
     {
-        if(strcmp(e.ville,nom_ville_a_chercher)==0)//affectation en début
+        if(strcmp(e.ville,nom_ville_a_chercher)==0)//affectation en dÃ©but
         {
             max=e.temperature;
             min=e.temperature;
