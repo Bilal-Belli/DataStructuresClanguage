@@ -1,40 +1,36 @@
 #include <stdio.h>
-int main()
-{   /* Criation du fichier */
 
-    struct Tenreg
+struct Tenreg
     {
         char ligne[256];  // variable enregistrement
     } e;
+    
+int main()
+{   
     FILE *f;
     int k=1;
     char nom_fichier[200];
+    
+    /* Criation du fichier */
     printf("\nConstruction du fichier\n");
     printf("-----------------------\n");
-    // instruction a l'utilisateur
-    printf("Donnez nom_fichier : ");
-    //scanner le nom du fichier meme si il ya des espaces
-    gets(nom_fichier);
+    printf("Donnez nom_fichier : ");        // instruction a l'utilisateur
+    gets(nom_fichier);                      //scanner le nom du fichier meme si il ya des espaces
     printf("\n");
-    // creation du nouveau fichier
-    f = fopen( nom_fichier, "w" );
-    // insertion des enregistrements lus à la console
-    printf("(0 pour terminer) ligne%3d: ",k++);
-    // scanner la ligne donneé par utilisateur
-    gets(e.ligne);
+    f = fopen( nom_fichier, "w" );          // creation du nouveau fichier
+    printf("(0 pour terminer) ligne%3d: ",k++);  // insertion des enregistrements lus Ã  la console
+    gets(e.ligne);                   // scanner la ligne donneÃ© par utilisateur
     while ( e.ligne[0] != '0' )
     {
-        // chaque ligne est un variable existe dans l'enregistrement
-        fprintf(f, "%s\n", e.ligne );
+        fprintf(f, "%s\n", e.ligne );        // chaque ligne est un variable existe dans l'enregistrement
         printf("(0 pour terminer) ligne%3d: ",k++);
-        // scanner la ligne donneé par utilisateur (boucle)
-        gets(e.ligne);
+        gets(e.ligne);                  // scanner la ligne donneÃ© par utilisateur (boucle)
     }
     fflush(f);
     fclose( f );
+    
 /* ******************************************************************** */
     /* Affichage du fichier */
-    //char nom_fichier[200];
     int n, i;
     printf("\nAffichage du FICHIER\n");
     printf("--------------------\n");
