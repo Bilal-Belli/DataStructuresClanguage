@@ -72,7 +72,7 @@ int main()
     gets(nom_fichier_2);
     printf("\nRESULTAT DE COMPARAISON\n");
     printf("************************\n");
-    Compare(nom_fichier_1,nom_fichier_2);/////////////////////////////////////////////////////////////
+    Compare(nom_fichier_1,nom_fichier_2);
     printf("\nAffichage du FICHIER (1)\n");
     printf("********************\n");
     Affichage(nom_fichier_1);
