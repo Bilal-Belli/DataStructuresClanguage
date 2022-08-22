@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1589896557 source:c:\users\lenovo\desktop\mon projets\belli_atek_tp1_g5\main.c
+	"LA_BIBLIOTHEQUE_DE_DESIGNE.h"
+	<windows.h>
+	<stdlib.h>
+	<stdio.h>
+
+1589288205 c:\users\lenovo\desktop\mon projets\belli_atek_tp1_g5\la_bibliotheque_de_designe.h
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<windows.h>
+	<string.h>
+	<windows.h>
+
